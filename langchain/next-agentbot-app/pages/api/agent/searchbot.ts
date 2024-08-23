@@ -130,6 +130,12 @@ export default async function handler(
     }
     //step1 : 로직 구현
   } catch (err) {
+    const resultMsg: IMemberMessage = {
+      user_type: UserType.BOT,
+      nick_name: "챗봇",
+      message: "죄송합니다. 검색결과를 찾지 못했습니다.",
+      send_date: new Date(),
+    };
     //step2 : API 호출 결과 설정
     apiResult.code = 500;
     apiResult.data = null;
